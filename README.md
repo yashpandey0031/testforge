@@ -62,7 +62,7 @@ The AI loop is covered by tests using a **fake LLM** (so CI needs no key): it ch
 test is discarded, that survivors reach the model's prompt, and that the score rises after feedback.
 *Real-model numbers: run `auto` with your key and paste them here.*
 
-## Limits (honest)
+## Limitations
 - Small mutation set (5 operators). Real tools like mutmut/Cosmic Ray have more.
 - **Equivalent mutants:** some changes don't alter behavior (e.g. storing `True` vs `1` in SQLite), so they survive and look like gaps.
 - Tests run as a subprocess per mutant: fine for small apps, slow for big ones (sampling with `--max` helps).
