@@ -25,13 +25,14 @@ def main(argv=None):
     g.add_argument("--max", type=int, default=0)
     g.add_argument("--seed", type=int, default=0)
     g.add_argument("--html", default="testforge_report.html")
+    g.add_argument("--model", help="model id")
     a = ap.parse_args(argv)
 
     if a.cmd == "auto":
         from .pipeline import auto
         from .providers import get_provider
         spec = json.load(open(a.spec))
-        out = auto(get_provider(a.provider), a.project, a.target, spec, a.max, a.seed, a.html)
+        out = auto(get_provider(a.provider, a.model), a.project, a.target, spec, a.max, a.seed, a.html)
         print(json.dumps(out, indent=2))
         return
 

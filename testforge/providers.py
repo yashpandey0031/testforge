@@ -39,7 +39,8 @@ class GroqProvider(Provider):
                        headers={"Authorization": f"Bearer {os.environ['GROQ_API_KEY']}"},
                        json={"model": self.model, "temperature": 0,
                              "messages": [{"role": "user", "content": prompt}]})
-        r.raise_for_status()
+        if r.status_code >= 400:
+            raise RuntimeError(f"HTTP {r.status_code}: {r.text[:500]}")
         return r.json()["choices"][0]["message"]["content"]
 
 
@@ -59,9 +60,9 @@ class AnthropicProvider(Provider):
         return r.json()["content"][0]["text"]
 
 
-def get_provider(name: str) -> Provider:
+def get_provider(name: str, model=None) -> Provider:
     if name == "groq":
-        return GroqProvider()
+        return GroqProvider(model=model)
     if name == "anthropic":
-        return AnthropicProvider()
+        return AnthropicProvider(model=model)
     raise ValueError(f"unknown provider {name!r} (use groq or anthropic)")
