@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+tasks.db
+report.html
+.pytest_cache/

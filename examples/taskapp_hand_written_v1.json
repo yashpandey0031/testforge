@@ -1,0 +1,217 @@
+{
+  "target": "app/main.py",
+  "test_cmd": "pytest -x -q -m api",
+  "total": 23,
+  "killed": 19,
+  "survived": 4,
+  "score": 82.6,
+  "results": [
+    {
+      "id": 1,
+      "operator": "negate_if",
+      "line": 51,
+      "original": "if not title:",
+      "mutated": "if not not title:",
+      "status": "killed",
+      "seconds": 1.1
+    },
+    {
+      "id": 2,
+      "operator": "negate_if",
+      "line": 61,
+      "original": "if done is not None:",
+      "mutated": "if not done is not None:",
+      "status": "killed",
+      "seconds": 1.42
+    },
+    {
+      "id": 3,
+      "operator": "negate_if",
+      "line": 71,
+      "original": "if not r:",
+      "mutated": "if not not r:",
+      "status": "killed",
+      "seconds": 1.22
+    },
+    {
+      "id": 4,
+      "operator": "compare",
+      "line": 61,
+      "original": "done is not None",
+      "mutated": "done is None",
+      "status": "killed",
+      "seconds": 1.27
+    },
+    {
+      "id": 5,
+      "operator": "negate_if",
+      "line": 80,
+      "original": "if not c.execute('SELECT 1 FROM tasks WHERE id=?', (task_id,)).fetchone():",
+      "mutated": "if not not c.execute('SELECT 1 FROM tasks WHERE id=?', (task_id,)).fetchone():",
+      "status": "killed",
+      "seconds": 1.11
+    },
+    {
+      "id": 6,
+      "operator": "negate_if",
+      "line": 82,
+      "original": "if fields:",
+      "mutated": "if not fields:",
+      "status": "killed",
+      "seconds": 1.42
+    },
+    {
+      "id": 7,
+      "operator": "negate_if",
+      "line": 93,
+      "original": "if c.execute('DELETE FROM tasks WHERE id=?', (task_id,)).rowcount == 0:",
+      "mutated": "if not c.execute('DELETE FROM tasks WHERE id=?', (task_id,)).rowcount == 0:",
+      "status": "killed",
+      "seconds": 1.25
+    },
+    {
+      "id": 8,
+      "operator": "constant_int",
+      "line": 48,
+      "original": "201",
+      "mutated": "202",
+      "status": "killed",
+      "seconds": 1.31
+    },
+    {
+      "id": 9,
+      "operator": "negate_if",
+      "line": 83,
+      "original": "if 'done' in fields:",
+      "mutated": "if not 'done' in fields:",
+      "status": "survived",
+      "seconds": 1.32
+    },
+    {
+      "id": 10,
+      "operator": "compare",
+      "line": 93,
+      "original": "c.execute('DELETE FROM tasks WHERE id=?', (task_id,)).rowcount == 0",
+      "mutated": "c.execute('DELETE FROM tasks WHERE id=?', (task_id,)).rowcount != 0",
+      "status": "killed",
+      "seconds": 1.52
+    },
+    {
+      "id": 11,
+      "operator": "constant_int",
+      "line": 90,
+      "original": "204",
+      "mutated": "205",
+      "status": "killed",
+      "seconds": 1.69
+    },
+    {
+      "id": 12,
+      "operator": "constant_int",
+      "line": 29,
+      "original": "1",
+      "mutated": "2",
+      "status": "killed",
+      "seconds": 1.53
+    },
+    {
+      "id": 13,
+      "operator": "constant_int",
+      "line": 29,
+      "original": "100",
+      "mutated": "101",
+      "status": "killed",
+      "seconds": 1.46
+    },
+    {
+      "id": 14,
+      "operator": "constant_int",
+      "line": 34,
+      "original": "1",
+      "mutated": "2",
+      "status": "survived",
+      "seconds": 1.57
+    },
+    {
+      "id": 15,
+      "operator": "constant_int",
+      "line": 34,
+      "original": "100",
+      "mutated": "101",
+      "status": "survived",
+      "seconds": 1.72
+    },
+    {
+      "id": 16,
+      "operator": "constant_int",
+      "line": 52,
+      "original": "422",
+      "mutated": "423",
+      "status": "killed",
+      "seconds": 1.21
+    },
+    {
+      "id": 17,
+      "operator": "arith",
+      "line": 62,
+      "original": "q + ' WHERE done=?'",
+      "mutated": "q - ' WHERE done=?'",
+      "status": "killed",
+      "seconds": 1.58
+    },
+    {
+      "id": 18,
+      "operator": "constant_int",
+      "line": 72,
+      "original": "404",
+      "mutated": "405",
+      "status": "killed",
+      "seconds": 1.31
+    },
+    {
+      "id": 19,
+      "operator": "constant_bool",
+      "line": 78,
+      "original": "True",
+      "mutated": "False",
+      "status": "killed",
+      "seconds": 1.31
+    },
+    {
+      "id": 20,
+      "operator": "compare",
+      "line": 83,
+      "original": "'done' in fields",
+      "mutated": "'done' not in fields",
+      "status": "survived",
+      "seconds": 1.68
+    },
+    {
+      "id": 21,
+      "operator": "constant_int",
+      "line": 81,
+      "original": "404",
+      "mutated": "405",
+      "status": "killed",
+      "seconds": 1.48
+    },
+    {
+      "id": 22,
+      "operator": "constant_int",
+      "line": 94,
+      "original": "404",
+      "mutated": "405",
+      "status": "killed",
+      "seconds": 1.7
+    },
+    {
+      "id": 23,
+      "operator": "arith",
+      "line": 64,
+      "original": "q + ' ORDER BY id'",
+      "mutated": "q - ' ORDER BY id'",
+      "status": "killed",
+      "seconds": 1.59
+    }
+  ]
+}

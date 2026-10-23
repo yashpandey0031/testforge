@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.testforge_cache/
+.pytest_cache/
+*.db
+.venv/

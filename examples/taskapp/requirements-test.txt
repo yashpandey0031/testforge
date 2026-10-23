@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest
+pytest-playwright
+pytest-html
+requests
+locust
